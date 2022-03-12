@@ -42,9 +42,9 @@ def model (x,z):
     m.Maximize(objs[0])
     m.options.SOLVER=2
     m.solve(disp=True)
-    print("total revenue: ", z*q.value[0]-x*(q.value[0]**2), "$")
-    print("marginal revenue: ", z-2*x*q.value[0], "$")
-    print("optimal price (maximum willingness to pay): ", z-x*q.value[0], "$")
+    print("total revenue: ", z*q.value[0]+x*(q.value[0]**2), "$")
+    print("marginal revenue: ", z+2*x*q.value[0], "$")
+    print("optimal price (maximum willingness to pay): ", z+x*q.value[0], "$")
     print("optimal sales (consumption level): ", q.value[0] , "units")
     return m
 
